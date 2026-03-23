@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Linhai Resin Water Treatment Solutions - Technical deep-dive into ion exchange mechanism, UPW systems, and regeneration efficiency.">
+    <title>Water Treatment Excellence | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+        .bg-molecular {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .text-title-lg { font-size: 36px; font-weight: bold; }
+        .text-title-md { font-size: 28px; font-weight: bold; }
+        .text-subtitle { font-size: 20px; font-weight: bold; }
+        
+        .title-underline {
+            display: inline-block; position: relative; padding-bottom: 8px; border-bottom: 3px solid #D92121; text-transform: uppercase;
+        }
+
+        /* 工艺节点交互 */
+        .process-node { border: 2px solid #1A365D; transition: all 0.3s; background: #FFF; }
+        .process-node:hover { border-color: #D92121; background-color: #fffafa; transform: scale(1.05); }
+        .process-arrow { color: #D92121; font-size: 24px; }
+
+        /* 卡片设计 */
+        .tech-card { border: 1px solid #eee; transition: all 0.3s; background: #FFF; }
+        .tech-card:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+        /* 导航下拉 */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 240px; border-top: 2px solid #D92121; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 100; }
+        .group:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-14">
+                <span class="font-arial-black text-[24px]">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="about.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">About Us</a>
+                        <a href="certifications.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Certifications & QA</a>
+                        <a href="news.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="py-6 hover:text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer text-primary-red font-bold">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="products.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Product Categories</a>
+                        <a href="solution-water.html" class="block p-4 bg-gray-50 text-primary-red font-bold">System Solutions</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="py-6 hover:text-primary-red">Contact Us</a>
+                <div class="flex items-center border border-gray-200 rounded px-2 h-10 ml-4">
+                    <input type="text" placeholder="Search technical data..." class="outline-none text-sm w-48 font-normal">
+                    <button class="text-gray-400"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[450px] flex items-center overflow-hidden bg-secondary-blue">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-white text-title-lg uppercase tracking-tight mb-4">Water Treatment <br><span class="text-primary-red">Engineering Excellence</span></h1>
+            <p class="text-blue-100 max-w-2xl text-[20px] font-light leading-relaxed">
+                Advancing industrial water management through molecular precision, ion-specific selectivity, and sustainable regeneration technologies.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-20 container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+                <h2 class="text-title-md title-underline mb-8">Mechanism: Ion Selectivity Dynamics</h2>
+                <p class="text-gray-600 mb-6">
+                    Efficient water treatment begins with understanding the <strong class="text-black">Selectivity Sequence</strong>. Our resins are engineered to leverage thermodynamic affinities, ensuring targeted removal of multivalent ions even in complex water matrices.
+                </p>
+                
+                
+                
+                <div class="mt-8 space-y-4">
+                    <div class="bg-gray-50 p-6 border-l-4 border-secondary-blue shadow-sm">
+                        <h4 class="font-bold text-black mb-2 uppercase text-sm">Cation Selectivity (Strong Acid Cation):</h4>
+                        <p class="font-mono text-sm text-secondary-blue">Fe³⁺ > Al³⁺ > Ca²⁺ > Mg²⁺ > K⁺ > NH₄⁺ > Na⁺ > H⁺</p>
+                        <p class="text-xs text-gray-500 mt-2 italic">*Higher valence and smaller hydrated radius result in stronger resin affinity.</p>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        For demineralization, we optimize the <strong class="text-black">Kinetics Control</strong>. Our macroporous resins allow for higher diffusion rates, making them ideal for high-flow systems or cold water conditions where standard resins may suffer from kinetic lag.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-10 border border-gray-100 shadow-2xl rounded-sm">
+                <h3 class="text-subtitle text-center mb-12 text-secondary-blue uppercase">Typical Demineralization Process Flow</h3>
+                <div class="flex flex-col items-center gap-6">
+                    <div class="process-node w-full max-w-sm py-4 px-6 text-center font-bold text-sm uppercase shadow-sm">Raw Water Source (High TDS)</div>
+                    <i class="fas fa-long-arrow-alt-down process-arrow"></i>
+                    <div class="process-node w-full max-w-sm py-4 px-6 text-center font-bold text-sm uppercase bg-blue-50">SAC Column (001x7 / D001) - Cation Removal</div>
+                    <i class="fas fa-long-arrow-alt-down process-arrow"></i>
+                    <div class="process-node w-full max-w-sm py-4 px-6 text-center font-bold text-sm uppercase bg-blue-50">SBA Column (201x7 / D201) - Anion & Silica Removal</div>
+                    <i class="fas fa-long-arrow-alt-down process-arrow"></i>
+                    <div class="process-node w-full max-w-sm py-4 px-6 text-center font-bold text-sm uppercase border-primary-red text-primary-red">Process Water (Conductivity < 1.0 µS/cm)</div>
+                    <i class="fas fa-long-arrow-alt-down process-arrow"></i>
+                    <div class="process-node w-full max-w-sm py-4 px-6 text-center font-bold text-sm uppercase bg-secondary-blue text-white">Mixed Bed Polishing (LH-7715) - Ultrapure Grade</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-title-md title-underline mx-auto">Advanced Systems & Efficiency</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="tech-card p-10">
+                    <h3 class="text-subtitle text-primary-red mb-6 uppercase">High-Purity UPW & EDI Systems</h3>
+                    <p class="text-sm text-gray-600 mb-8 leading-relaxed">
+                        For semiconductor and power sectors requiring resistivity up to <strong class="text-black">18.2 MΩ·cm</strong>, we provide high-regeneration degree mixed bed resins. Our resins are specially washed to ensure ultra-low TOC (Total Organic Carbon) leaching.
+                    </p>
+                    
+                    <ul class="mt-6 space-y-3 text-sm font-bold text-secondary-blue">
+                        <li><i class="fas fa-microchip mr-2"></i> Semiconductor Grade Purity</li>
+                        <li><i class="fas fa-bolt mr-2"></i> Power Plant Condensate Polishing</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card p-10">
+                    <h3 class="text-subtitle text-primary-red mb-6 uppercase">Regeneration Strategy: Counter-Current</h3>
+                    <p class="text-sm text-gray-600 mb-8 leading-relaxed">
+                        Moving from Co-current to <strong class="text-black">Counter-current Regeneration</strong> can reduce chemical consumption by 20-40%. By regenerating from the bottom up, the most highly regenerated resin stays at the outlet, ensuring minimum ion leakage.
+                    </p>
+                    
+                    <ul class="mt-6 space-y-3 text-sm font-bold text-secondary-blue">
+                        <li><i class="fas fa-leaf mr-2"></i> Lower Chemical OPEX</li>
+                        <li><i class="fas fa-tint-slash mr-2"></i> Lower Sodium/Silica Leakage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-secondary-blue text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-2xl font-bold mb-12 text-center uppercase tracking-widest">Resin Fouling & Maintenance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="border border-blue-400 p-8 hover:bg-white/5 transition-colors">
+                    <div class="text-primary-red text-3xl mb-4"><i class="fas fa-biohazard"></i></div>
+                    <h4 class="font-bold mb-4 uppercase text-sm">Organic Fouling (Anion)</h4>
+                    <p class="text-xs text-blue-100 leading-relaxed mb-4">Humic and fulvic acids can irreversibly bind to SBA resins, causing capacity loss. Our <strong>D201 macroporous series</strong> acts as an organic scavenger to protect your system.</p>
+                    <span class="text-[10px] text-gray-400 font-mono">Solution: Alkaline Brine Wash</span>
+                </div>
+                <div class="border border-blue-400 p-8 hover:bg-white/5 transition-colors">
+                    <div class="text-primary-red text-3xl mb-4"><i class="fas fa-radiation"></i></div>
+                    <h4 class="font-bold mb-4 uppercase text-sm">Oxidation Degradation</h4>
+                    <p class="text-xs text-blue-100 leading-relaxed mb-4">Free chlorine in raw water attacks the resin cross-linking. We recommend high DVB cross-linked resins or pre-activated carbon filtration to extend resin lifespan.</p>
+                    <span class="text-[10px] text-gray-400 font-mono">Solution: High Cross-linkage Matrix</span>
+                </div>
+                <div class="border border-blue-400 p-8 hover:bg-white/5 transition-colors">
+                    <div class="text-primary-red text-3xl mb-4"><i class="fas fa-vial-circle-check"></i></div>
+                    <h4 class="font-bold mb-4 uppercase text-sm">Iron Fouling</h4>
+                    <p class="text-xs text-blue-100 leading-relaxed mb-4">Iron deposits coat the resin beads, blocking exchange sites. Proper backwashing and the use of reducing agents during regeneration are key preventative measures.</p>
+                    <span class="text-[10px] text-gray-400 font-mono">Solution: HCl / Reducing Agent Wash</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-4">
+        <h2 class="text-title-md title-underline mb-12">Recommended Water Treatment Resins</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="tech-card p-6 flex flex-col items-center text-center">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p3-doubao-search-sign.byteimg.com/labis/1c973721bb4aeb740f2dd88dc7f4f79d~tplv-be4g95zd3a-image.jpeg" alt="001x7" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">001x7 (LH-007)</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4">Softening & Demineralization</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">Standard high-capacity strong acid cation resin for residential and industrial softening.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue hover:border-secondary-blue transition-all">Full Specifications ></a>
+            </div>
+            
+            <div class="tech-card p-6 flex flex-col items-center text-center">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/954393857058144261~tplv-be4g95zd3a-image.jpeg" alt="D201" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">D201 (LH-201)</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4">Anion Exchange & De-silica</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">Macroporous strong base anion resin with high basicity for efficient silica and organic removal.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue hover:border-secondary-blue transition-all">Full Specifications ></a>
+            </div>
+
+            <div class="tech-card p-6 flex flex-col items-center text-center">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p3-doubao-search-sign.byteimg.com/labis/eba7225eac4472cd2e2edfefc781f723~tplv-be4g95zd3a-image.jpeg" alt="LH-7715" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">LH-7715</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4">Mixed Bed Polishing</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">Optimized resin blend for high-purity water polishing in electronics and laboratory systems.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue hover:border-secondary-blue transition-all">Full Specifications ></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-gray-100 text-center">
+        <p class="text-gray-400 font-bold uppercase text-xs tracking-[0.2em] mb-4">Consult with our Water Treatment Specialists</p>
+        <h2 class="text-3xl font-bold mb-10 text-secondary-blue">OPTIMIZE YOUR WATER PROCESS TODAY</h2>
+        <a href="contact.html" class="inline-block bg-primary-red text-white px-12 py-4 font-bold uppercase tracking-widest hover:bg-black transition-all shadow-xl">Request a Quote</a>
+    </section>
+
+    <footer class="bg-white border-t-2 border-primary-red pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-2xl mb-4">LINHAI RESIN</div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">Synthesizing high-performance ion exchange resins for industrial and consumer sectors since 1972. Master the chemistry of separation.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-black uppercase mb-4 text-sm">Quick Links</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 font-bold">
+                        <li><a href="about.html" class="hover:text-primary-red">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red">Products</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-red">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-black uppercase text-sm">Social Media</h4>
+                    <div class="flex gap-4">
+                        <i class="fab fa-linkedin text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                        <i class="fab fa-facebook text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                        <i class="fab fa-weixin text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-[10px] pt-8 border-t border-gray-100 uppercase tracking-widest">&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="contact.html" class="fixed bottom-8 right-8 bg-secondary-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:bg-primary-red hover:scale-110 transition-all z-50 cursor-pointer">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+</body>
+</html>

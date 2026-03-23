@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LINHAI RESIN R&D Laboratory. State-of-the-art polymer synthesis, rigorous quality control, and custom resin development.">
+    <title>R&D Laboratory | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 16px; 
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { color: #000000; }
+        .text-title-lg { font-size: 32px; font-weight: bold; }
+        .text-title-md { font-size: 28px; font-weight: bold; }
+        .text-subtitle { font-size: 20px; font-weight: bold; }
+
+        /* 分子结构暗纹背景 */
+        .bg-molecular {
+            background-color: #FFFFFF;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000000' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        /* 标题红色下划线装饰 */
+        .title-underline {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .title-underline::after {
+            content: ''; position: absolute; left: 0; bottom: 0;
+            width: 100%; height: 3px; background-color: #D92121;
+        }
+
+        /* 导航栏交互 */
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link:hover { color: #D92121; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0;
+            background-color: #FFF; min-width: 240px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-top: 2px solid #D92121; z-index: 50;
+        }
+        .group:hover .dropdown-menu { display: block; }
+        .dropdown-item {
+            display: block; padding: 12px 20px; font-size: 16px;
+            border-bottom: 1px solid #f3f4f6; transition: all 0.2s; color: #000;
+        }
+        .dropdown-item:hover { color: #D92121; background-color: #f9fafb; padding-left: 25px; }
+
+        /* 交互特效 */
+        .btn-outline { border: 2px solid #FFF; color: #FFF; transition: all 0.3s; display: inline-block; text-align: center; }
+        .btn-outline:hover { background-color: #D92121; border-color: #D92121; transform: translateY(-2px); }
+        .btn-solid { background-color: #D92121; color: #FFF; transition: all 0.3s; display: inline-block; text-align: center; border: 2px solid #D92121; }
+        .btn-solid:hover { background-color: #b01a1a; border-color: #b01a1a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(217,33,33,0.3); }
+
+        .team-card { transition: all 0.3s; background: #FFF; border: 1px solid #eee; }
+        .team-card:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        .qc-step { transition: all 0.3s; border-left: 4px solid #1A365D; background: #FFF; }
+        .qc-step:hover { border-left-color: #D92121; background: #f9fafb; transform: translateX(5px); }
+
+        .lab-img-container { overflow: hidden; background: #eee; position: relative; }
+        .lab-img-container img { transition: transform 0.7s ease; width: 100%; height: 100%; object-fit: cover; }
+        .lab-img-container:hover img { transform: scale(1.1); }
+        .lab-img-overlay { position: absolute; inset: 0; background: rgba(26, 54, 93, 0.7); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; }
+        .lab-img-container:hover .lab-img-overlay { opacity: 1; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <!-- 全局统一导航栏 -->
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="LINHAI RESIN Logo" class="h-14 object-contain">
+                <span class="font-arial-black text-[24px] text-black tracking-tight">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer nav-link">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">About Us</a>
+                        <a href="certifications.html" class="dropdown-item">Certifications & Licenses</a>
+                        <a href="news.html" class="dropdown-item">News & Events</a>
+                    </div>
+                </div>
+                <!-- 当前页面高亮 -->
+                <a href="rd-lab.html" class="nav-link py-6 text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer nav-link">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu">
+                        <a href="products.html" class="dropdown-item">Product Categories</a>
+                        <div class="px-5 py-2 text-xs text-gray-400 font-bold uppercase tracking-wider bg-gray-50">Systems Solutions</div>
+                        <a href="solution-water.html" class="dropdown-item pl-8">→ Water Treatment</a>
+                        <a href="solution-pharma.html" class="dropdown-item pl-8">→ Pharma & Biotech</a>
+                        <a href="solution-metal.html" class="dropdown-item pl-8">→ Metallurgy Extraction</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link py-6">Contact Us</a>
+                <div class="flex items-center border border-gray-300 rounded overflow-hidden h-10 ml-4">
+                    <input type="text" placeholder="Search resin products & technical data..." class="px-3 py-2 w-64 text-[14px] font-normal outline-none focus:bg-gray-50">
+                    <button class="px-4 text-gray-500 hover:text-primary-red bg-white"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部标题 -->
+    <header class="py-[60px] container mx-auto px-4 text-center">
+        <h1 class="text-title-lg title-underline">R&D LABORATORY</h1>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-2">Where polymer science meets industrial precision. Our state-of-the-art laboratory is the innovation engine behind our 200+ specialized resin varieties.</p>
+    </header>
+
+    <!-- 1. 专家团队 (Our Scientific Minds) -->
+    <section class="py-[60px] container mx-auto px-4">
+        <div class="mb-12">
+            <h2 class="text-title-md title-underline">OUR SCIENTIFIC MINDS</h2>
+            <p class="text-gray-600">A dedicated team of senior engineers and chemists leading the industry in macroporous and gel-type matrix synthesis.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- 研发专家 1 -->
+            <div class="team-card p-8 flex flex-col items-center text-center">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-100 mb-6 bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?auto=format&fit=crop&w=300&q=80" alt="Dr. He" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h3 class="text-subtitle text-black mb-1">Dr. He</h3>
+                <p class="text-primary-red text-sm font-bold uppercase tracking-wider mb-4">Chief Chemist (PhD)</p>
+                <div class="w-10 h-1 bg-gray-300 mb-4"></div>
+                <p class="text-sm text-gray-600"><strong>27 years of experience.</strong> Specializes in the theoretical and practical applications of polymer chemical engineering. Leads the core algorithmic development for custom cross-linking densities.</p>
+            </div>
+
+            <!-- 研发专家 2 -->
+            <div class="team-card p-8 flex flex-col items-center text-center">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-100 mb-6 bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Mr. Hu" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h3 class="text-subtitle text-black mb-1">Mr. Hu</h3>
+                <p class="text-secondary-blue text-sm font-bold uppercase tracking-wider mb-4">R&D Project Lead</p>
+                <div class="w-10 h-1 bg-gray-300 mb-4"></div>
+                <p class="text-sm text-gray-600"><strong>17 years of experience.</strong> Expert in independently conducting scientific research and scaling up lab formulations to mass industrial production.</p>
+            </div>
+
+            <!-- 研发专家 3 -->
+            <div class="team-card p-8 flex flex-col items-center text-center">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-100 mb-6 bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Ms. Xu" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h3 class="text-subtitle text-black mb-1">Ms. Xu</h3>
+                <p class="text-secondary-blue text-sm font-bold uppercase tracking-wider mb-4">New Product Dev</p>
+                <div class="w-10 h-1 bg-gray-300 mb-4"></div>
+                <p class="text-sm text-gray-600"><strong>10 years of experience.</strong> Formerly at Tsinghua University Tech R&D Center. Specialized in laboratory product analysis, titration, and developing cutting-edge specialty resins.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 严苛的质控标准 (Rigorous QC Protocols) -->
+    <section class="py-[80px] bg-gray-50 border-y border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-title-md title-underline mb-6">RIGOROUS Q.C. PROTOCOLS</h2>
+                    <p class="mb-6 text-gray-700 leading-relaxed">
+                        We do not rely on estimates. Every batch of Linhai Resin undergoes exhaustive physical and chemical testing to ensure it meets our published specifications and performs flawlessly under extreme industrial conditions.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="qc-step p-4 shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-sync-alt text-primary-red text-xl w-8"></i>
+                                <h4 class="font-bold text-black">Moisture Content Precision</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 pl-8">Moisture retention dictates exchange capacity. We utilize advanced <strong>2600 r/min centrifugation</strong> (6-minute cycles) coupled with high-precision analytical balances to measure absolute moisture percentages.</p>
+                        </div>
+                        
+                        <div class="qc-step p-4 shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-dot-circle text-primary-red text-xl w-8"></i>
+                                <h4 class="font-bold text-black">Sphericity & Attrition Testing</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 pl-8">Mechanical strength is critical. Resins are subjected to intense mechanical stress in a specialized <strong>Silicon Nitride Ball Mill</strong> (125 r/min). We guarantee a post-attrition sphericity rate of ≥90% for most models.</p>
+                        </div>
+
+                        <div class="qc-step p-4 shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-weight text-primary-red text-xl w-8"></i>
+                                <h4 class="font-bold text-black">True & Apparent Density</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 pl-8">Using precision densitometers, we calculate exact wet true densities (excluding interstitial voids) to ensure perfect bed stratification for double-layer and mixed-bed systems.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative h-full min-h-[400px] border border-gray-300 bg-white p-2 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Laboratory Testing" class="w-full h-full object-cover">
+                    <div class="absolute bottom-6 -left-6 bg-secondary-blue text-white p-6 shadow-xl max-w-xs border-l-4 border-primary-red hidden md:block">
+                        <i class="fas fa-flask text-3xl mb-3 text-gray-300"></i>
+                        <p class="text-sm font-bold uppercase tracking-widest mb-1">Testing Capacity</p>
+                        <p class="text-xs text-gray-300">Over 50 distinct titration and spectroscopic analyses performed daily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 尖端仪器画廊 (Advanced Instrumentation) -->
+    <section class="py-[80px] container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-title-md title-underline mx-auto">ADVANCED INSTRUMENTATION</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">Equipped with industry-leading analytical tools to monitor polymer structures at the molecular level.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="lab-img-container h-64 border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1574689211272-bc1550ce184b?auto=format&fit=crop&w=600&q=80" alt="Gas Chromatography">
+                <div class="lab-img-overlay">
+                    <span class="text-white font-bold tracking-wider uppercase border border-white px-4 py-2 text-sm">Chromatography</span>
+                </div>
+            </div>
+            <div class="lab-img-container h-64 border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89af14fb712?auto=format&fit=crop&w=600&q=80" alt="Spectroscopy">
+                <div class="lab-img-overlay">
+                    <span class="text-white font-bold tracking-wider uppercase border border-white px-4 py-2 text-sm">Spectroscopy</span>
+                </div>
+            </div>
+            <div class="lab-img-container h-64 border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Polymerization Reactor">
+                <div class="lab-img-overlay">
+                    <span class="text-white font-bold tracking-wider uppercase border border-white px-4 py-2 text-sm">Pilot Reactors</span>
+                </div>
+            </div>
+            <div class="lab-img-container h-64 border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=600&q=80" alt="Analytical Balance">
+                <div class="lab-img-overlay">
+                    <span class="text-white font-bold tracking-wider uppercase border border-white px-4 py-2 text-sm">Precision Balances</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 定制化合成服务 CTA (Custom Synthesis) -->
+    <section class="py-[80px] bg-secondary-blue text-white relative overflow-hidden">
+        <!-- 背景点缀 -->
+        <i class="fas fa-project-diagram absolute -right-20 -bottom-20 text-[250px] text-white opacity-5"></i>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl font-arial-black mb-6 uppercase tracking-wide">Cannot Find the Exact Resin Model?</h2>
+            <div class="w-16 h-1 bg-primary-red mx-auto mb-6"></div>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-10 font-light">
+                Our expertise goes beyond our standard catalog. Send us your water analysis report or detail your complex separation challenges. Our chemists will synthesize a <strong>Custom Polymer Matrix</strong> specifically tailored for your industrial process.
+            </p>
+            <a href="contact.html" class="btn-solid px-10 py-4 font-bold uppercase tracking-widest text-sm shadow-xl">
+                Request Custom Synthesis <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 全局统一页脚 -->
+    <footer class="bg-white border-t-2 border-primary-red pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-[20px] text-black mb-4 flex items-center gap-2">
+                        <img src="logo.png" alt="Logo" class="h-6"> LINHAI RESIN
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6 max-w-sm">Mastering polymer synthesis since 1972. We engineer high-performance ion exchange resins for industrial, food, and nuclear sectors globally.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary-blue hover:bg-primary-red hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary-blue hover:bg-primary-red hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary-blue hover:bg-primary-red hover:text-white transition-colors"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-black uppercase">PRODUCTS</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Gel Cation</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Macroporous</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Chelating</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Food Grade</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-black uppercase">COMPANY</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="about.html" class="hover:text-primary-red transition-colors">About Us</a></li>
+                        <li><a href="rd-lab.html" class="hover:text-primary-red transition-colors">Lab Facility</a></li>
+                        <li><a href="certifications.html" class="hover:text-primary-red transition-colors">Certifications</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-red transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-primary-red transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-red transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 右下角悬浮客服按钮 -->
+    <a href="contact.html" class="fixed bottom-8 right-8 bg-secondary-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:bg-primary-red hover:scale-110 transition-all z-50 cursor-pointer">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Linhai Resin Metallurgy Solutions - Specialized chelating resins for Gold, Uranium, Lithium, and Zinc extraction. High selectivity and acid resistance.">
+    <title>Metallurgy Extraction Solutions | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+        .bg-molecular {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .text-title-lg { font-size: 36px; font-weight: bold; }
+        .text-title-md { font-size: 28px; font-weight: bold; }
+        .text-subtitle { font-size: 20px; font-weight: bold; }
+        
+        .title-underline {
+            display: inline-block; position: relative; padding-bottom: 8px; border-bottom: 3px solid #D92121; text-transform: uppercase;
+        }
+
+        /* 冶金行业卡片交互 */
+        .metal-box { border: 1px solid #eee; transition: all 0.3s; background: #FFF; }
+        .metal-box:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+        /* 矿业风格背景点缀 */
+        .mining-bg { background: linear-gradient(135deg, #1A365D 0%, #0d1b2e 100%); }
+
+        /* 导航下拉菜单 (全站统一) */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 240px; border-top: 2px solid #D92121; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 100; }
+        .group:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-14">
+                <span class="font-arial-black text-[24px]">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="about.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">About Us</a>
+                        <a href="certifications.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Certifications & QA</a>
+                        <a href="news.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="py-6 hover:text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer text-primary-red font-bold">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="products.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Product Categories</a>
+                        <a href="solution-water.html" class="block p-4 bg-gray-50 text-primary-red font-bold">System Solutions</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="py-6 hover:text-primary-red">Contact Us</a>
+                <div class="flex items-center border border-gray-200 rounded px-2 h-10 ml-4">
+                    <input type="text" placeholder="Search metallurgy resins..." class="outline-none text-sm w-48 font-normal">
+                    <button class="text-gray-400"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[450px] flex items-center overflow-hidden bg-secondary-blue">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-white text-title-lg uppercase tracking-tight mb-4">Metallurgy & Mining <br><span class="text-primary-red">Resource Recovery</span></h1>
+            <p class="text-blue-100 max-w-2xl text-[20px] font-light leading-relaxed">
+                Unlock the value of low-grade ores and tailings. Our specialized chelating resins offer extreme selectivity and durability for strategic metal extraction.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-20 container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-title-md title-underline mb-8">Precision Extraction for High-Value Metals</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Linhai Resin provides a full range of ion exchange resins for the hydrometallurgical industry. From the <strong>Resin-In-Pulp (RIP)</strong> process to traditional column adsorption, our products are engineered to withstand high-acid concentrations and mechanical attrition.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 bg-gray-50 border-l-4 border-primary-red">
+                        <h4 class="font-bold text-black text-sm uppercase">Gold & Silver</h4>
+                        <p class="text-[11px] text-gray-500">Selective recovery from cyanide leach liquors using D301G.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 border-l-4 border-primary-red">
+                        <h4 class="font-bold text-black text-sm uppercase">Uranium Extraction</h4>
+                        <p class="text-[11px] text-gray-500">High-capacity BO020 for sulfuric acid or carbonate leaching.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 border-l-4 border-primary-red">
+                        <h4 class="font-bold text-black text-sm uppercase">Lithium & Cobalt</h4>
+                        <p class="text-[11px] text-gray-500">Purification for EV battery-grade precursor production.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 border-l-4 border-primary-red">
+                        <h4 class="font-bold text-black text-sm uppercase">Heavy Metals</h4>
+                        <p class="text-[11px] text-gray-500">LH-520Z for Zinc and Mercury removal from waste acid.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-[400px] border-8 border-gray-50 overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80" alt="Hydrometallurgy Process" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-secondary-blue opacity-20"></div>
+                <div class="absolute bottom-4 right-4 bg-white p-4 shadow-lg border-t-2 border-primary-red">
+                    <p class="text-xs font-bold text-secondary-blue uppercase mb-1">Process Capability</p>
+                    <p class="text-[10px] text-gray-500 italic">Operating in PH ranges from 0 to 14.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 mining-bg text-white border-y border-black overflow-hidden relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl font-bold border-b-2 border-primary-red inline-block pb-2 uppercase tracking-widest">Hydrometallurgy Process Efficiency</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-red transition-all border border-white/20">
+                        <i class="fas fa-hammer text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 uppercase text-sm">Mechanical Durability</h4>
+                    <p class="text-xs text-blue-100 leading-relaxed">Mining slurry is abrasive. Our macroporous D-Series resins feature a reinforced matrix to minimize osmotic shock and mechanical breakage during agitation.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-red transition-all border border-white/20">
+                        <i class="fas fa-filter text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 uppercase text-sm">Selective Adsorption</h4>
+                    <p class="text-xs text-blue-100 leading-relaxed">Our chelating resins (e.g., LH-403 for Boron) target specific ions based on coordination chemistry, ignoring high concentrations of competing alkali metals.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-red transition-all border border-white/20">
+                        <i class="fas fa-recycle text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 uppercase text-sm">Acid/Alkali Resistance</h4>
+                    <p class="text-xs text-blue-100 leading-relaxed">Engineered for long life in harsh leaching environments. Resistant to chemical degradation in 20% sulfuric acid or concentrated caustic solutions.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 max-w-4xl mx-auto bg-white/5 p-8 border border-white/10 backdrop-blur-sm">
+                <h3 class="text-sm font-bold uppercase mb-6 tracking-widest text-primary-red">Recovery Rate Optimization</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-[10px] font-bold mb-2 uppercase"><span>Gold Recovery Efficiency (D301G)</span> <span>> 99.5%</span></div>
+                        <div class="w-full bg-white/10 h-1.5"><div class="bg-primary-red h-full w-[99.5%]"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-[10px] font-bold mb-2 uppercase"><span>Uranium Loading Capacity (BO020)</span> <span>≥ 65 g/L</span></div>
+                        <div class="w-full bg-white/10 h-1.5"><div class="bg-primary-red h-full w-[85%]"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-4">
+        <h2 class="text-title-md title-underline mb-12">Mining Grade Resin Portfolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="metal-box p-8 flex flex-col items-center text-center h-full">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p3-doubao-search-sign.byteimg.com/labis/eba7225eac4472cd2e2edfefc781f723~tplv-be4g95zd3a-image.jpeg" alt="LH-520Z" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">LH-520Z</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4 tracking-widest">Zinc Removal Specialized</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">Advanced chelating resin for high-efficiency zinc ion recovery from metallurgical wastewater and waste acid.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue hover:border-secondary-blue transition-all">Download TDS ></a>
+            </div>
+            
+            <div class="metal-box p-8 flex flex-col items-center text-center h-full">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/954393857058144261~tplv-be4g95zd3a-image.jpeg" alt="D301G" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">D301G (LH-301G)</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4 tracking-widest">Gold Recovery Resin</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">Anion resin with high selectivity for gold/silver cyanide complexes. Optimized for Resin-in-Leach (RIL) circuits.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue hover:border-secondary-blue transition-all">Download COA ></a>
+            </div>
+
+            <div class="metal-box p-8 flex flex-col items-center text-center h-full">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p3-doubao-search-sign.byteimg.com/labis/1c973721bb4aeb740f2dd88dc7f4f79d~tplv-be4g95zd3a-image.jpeg" alt="BO020" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">BO020</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4 tracking-widest">Uranium Extraction</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">High capacity strong base anion resin specifically designed for uranium loading in both acid and alkali leach systems.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue hover:border-secondary-blue transition-all">Request Sample ></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white border-t border-gray-100 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-400 font-bold uppercase text-xs tracking-[0.2em] mb-4">Improve Your Mine's Profitability</p>
+            <h2 class="text-3xl font-bold mb-10 text-secondary-blue">OPTIMIZE METAL RECOVERY RATES</h2>
+            <a href="contact.html" class="inline-block bg-primary-red text-white px-12 py-4 font-bold uppercase tracking-widest hover:bg-black transition-all shadow-xl">Consult a Mining Engineer</a>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t-2 border-primary-red pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-2xl mb-4 text-black">LINHAI RESIN</div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">Synthesizing high-performance ion exchange resins for industrial, food, and nuclear sectors globally. Master the chemistry of recovery.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-black uppercase mb-4 text-sm font-bold">Solutions</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><a href="solution-water.html" class="hover:text-primary-red">Water Treatment</a></li>
+                        <li><a href="solution-power.html" class="hover:text-primary-red">Power & Energy</a></li>
+                        <li><a href="solution-pharma.html" class="hover:text-primary-red">Pharma & Biotech</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-black uppercase text-sm font-bold">Connect</h4>
+                    <div class="flex gap-4">
+                        <i class="fab fa-linkedin text-2xl text-secondary-blue hover:text-primary-red cursor-pointer"></i>
+                        <i class="fab fa-facebook text-2xl text-secondary-blue hover:text-primary-red cursor-pointer"></i>
+                        <i class="fab fa-weixin text-2xl text-secondary-blue hover:text-primary-red cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-[10px] pt-8 border-t border-gray-100 uppercase tracking-widest font-bold">&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="contact.html" class="fixed bottom-8 right-8 bg-secondary-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:bg-primary-red hover:scale-110 transition-all z-50 cursor-pointer">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+</body>
+</html>

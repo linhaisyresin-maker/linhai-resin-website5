@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LINHAI RESIN Product Catalog - Filter by application, ion type, or find global equivalents.">
+    <title>Resin Selection Center | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; }
+        .bg-molecular {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .title-underline {
+            display: inline-block; position: relative; padding-bottom: 8px; border-bottom: 3px solid #D92121; text-transform: uppercase; font-weight: bold;
+        }
+        
+        /* 侧边栏交互 */
+        .sidebar-item { border-left: 4px solid transparent; transition: all 0.2s; cursor: pointer; }
+        .sidebar-item:hover { background-color: #f3f4f6; color: #D92121; padding-left: 1.5rem; }
+        .sidebar-item.active { border-left-color: #D92121; background-color: #f9fafb; color: #D92121; font-weight: bold; }
+
+        /* 产品卡片交互 */
+        .product-card { border: 1px solid #eee; transition: all 0.3s; background: #fff; position: relative; }
+        .product-card:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        /* 询价篮浮动按钮 */
+        .inquiry-basket {
+            position: fixed; bottom: 100px; right: 30px; z-index: 40;
+            background: #1A365D; color: white; padding: 15px 20px;
+            border-radius: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: flex; align-items: center; gap: 10px; cursor: pointer;
+            transition: all 0.3s;
+        }
+        .inquiry-basket:hover { background: #D92121; transform: scale(1.05); }
+
+        /* 包装展示卡片 */
+        .pkg-card { transition: all 0.3s; border: 1px solid #eee; }
+        .pkg-card:hover { border-color: #1A365D; background: #f9fafb; }
+        
+        /* 导航下拉 */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 240px; border-top: 2px solid #D92121; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 100; }
+        .group:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <!-- 导航栏 (全站统一) -->
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-14">
+                <span class="font-arial-black text-[24px]">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal">
+                        <a href="about.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">About Us</a>
+                        <a href="certifications.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Certifications & QA</a>
+                        <a href="news.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="py-6 hover:text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer text-primary-red">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="products.html" class="block p-4 bg-gray-50 text-primary-red font-bold">Product Categories</a>
+                        <a href="solution-water.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">System Solutions</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="py-6 hover:text-primary-red">Contact Us</a>
+                <div class="flex items-center border border-gray-200 rounded px-2 h-10 ml-4">
+                    <input type="text" placeholder="Search resin models..." class="outline-none text-sm w-48 font-normal">
+                    <button class="text-gray-400"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <!-- 左侧侧边栏：多维度筛选 -->
+            <aside class="lg:w-1/4">
+                <div class="sticky top-[120px] space-y-8">
+                    <!-- 分类筛选 -->
+                    <div class="bg-white border border-gray-100 p-6 shadow-sm">
+                        <h2 class="text-lg font-bold mb-4 border-b-2 border-primary-red pb-2 uppercase">By Ion Type</h2>
+                        <nav class="flex flex-col space-y-1 text-sm text-gray-700">
+                            <a class="sidebar-item active px-4 py-2">All Products</a>
+                            <a class="sidebar-item px-4 py-2">Strong Acid Cation</a>
+                            <a class="sidebar-item px-4 py-2">Weak Acid Cation</a>
+                            <a class="sidebar-item px-4 py-2">Strong Base Anion</a>
+                            <a class="sidebar-item px-4 py-2">Weak Base Anion</a>
+                            <a class="sidebar-item px-4 py-2">Chelating & Specialty</a>
+                            <a class="sidebar-item px-4 py-2">Mixed Bed Resins</a>
+                        </nav>
+                    </div>
+
+                    <!-- 应用场景多选 -->
+                    <div class="bg-white border border-gray-100 p-6 shadow-sm">
+                        <h2 class="text-lg font-bold mb-4 border-b-2 border-secondary-blue pb-2 uppercase">By Application</h2>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <label class="flex items-center gap-3 cursor-pointer hover:text-primary-red transition-colors">
+                                <input type="checkbox" class="w-4 h-4 accent-primary-red"> Water Softening
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer hover:text-primary-red transition-colors">
+                                <input type="checkbox" class="w-4 h-4 accent-primary-red"> Pure Water / EDI
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer hover:text-primary-red transition-colors">
+                                <input type="checkbox" class="w-4 h-4 accent-primary-red"> Heavy Metal Removal
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer hover:text-primary-red transition-colors">
+                                <input type="checkbox" class="w-4 h-4 accent-primary-red"> Sugar Decolorization
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer hover:text-primary-red transition-colors">
+                                <input type="checkbox" class="w-4 h-4 accent-primary-red"> Pharma Extraction
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 资源入口 -->
+                    <div class="bg-secondary-blue p-6 text-white">
+                        <h3 class="font-bold mb-4 uppercase tracking-wider text-sm">Technical Support</h3>
+                        <p class="text-xs text-gray-300 mb-6 leading-relaxed">Need help selecting the right resin for your process?</p>
+                        <a href="contact.html" class="block w-full text-center bg-primary-red text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-primary-red transition-all">Request Selection Guide</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右侧主内容区 -->
+            <main class="lg:w-3/4">
+                <h1 class="text-title-md title-underline mb-8">Product Matrix</h1>
+
+                <!-- 等效替代参考提示块 -->
+                <div class="bg-gray-50 border-l-4 border-secondary-blue p-5 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 shadow-sm">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-exchange-alt text-secondary-blue text-2xl"></i>
+                        <p class="text-sm text-gray-700">Looking for <strong>Linhai equivalents</strong> to Amberlite, Purolite, or Lewatit models?</p>
+                    </div>
+                    <a href="#" class="px-5 py-2 bg-white border border-secondary-blue text-secondary-blue font-bold text-xs uppercase hover:bg-secondary-blue hover:text-white transition-all">Cross-Reference Chart</a>
+                </div>
+                
+                <!-- 产品列表网格 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    
+                    <!-- 产品卡片 1 -->
+                    <div class="product-card p-6 flex flex-col">
+                        <div class="h-48 bg-gray-50 mb-6 flex items-center justify-center relative overflow-hidden group">
+                            <img src="https://p3-doubao-search-sign.byteimg.com/labis/1c973721bb4aeb740f2dd88dc7f4f79d~tplv-be4g95zd3a-image.jpeg" alt="001x7" class="object-cover h-full w-full opacity-90 transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-2 right-2">
+                                <label class="bg-white/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-secondary-blue flex items-center gap-1 cursor-pointer hover:bg-primary-red hover:text-white transition-all">
+                                    <input type="checkbox" class="accent-primary-red"> ADD TO INQUIRY
+                                </label>
+                            </div>
+                        </div>
+                        <span class="text-primary-red text-xs font-bold uppercase mb-2">Gel Type Cation</span>
+                        <h3 class="text-xl font-bold mb-3">001x7 (LH-007)</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">High capacity strong acid cation resin in sodium form. Standard grade for industrial and residential water softening.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                            <a href="product-detail.html" class="text-secondary-blue font-bold text-xs uppercase tracking-wider hover:text-primary-red transition-colors">Details <i class="fas fa-chevron-right ml-1"></i></a>
+                            <span class="text-[10px] text-gray-400 font-mono">CAS: 69011-20-7</span>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 2 -->
+                    <div class="product-card p-6 flex flex-col">
+                        <div class="h-48 bg-gray-50 mb-6 flex items-center justify-center relative overflow-hidden group">
+                            <img src="https://p11-doubao-search-sign.byteimg.com/labis/954393857058144261~tplv-be4g95zd3a-image.jpeg" alt="D001" class="object-cover h-full w-full opacity-90 transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-2 right-2">
+                                <label class="bg-white/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-secondary-blue flex items-center gap-1 cursor-pointer hover:bg-primary-red hover:text-white transition-all">
+                                    <input type="checkbox" class="accent-primary-red"> ADD TO INQUIRY
+                                </label>
+                            </div>
+                        </div>
+                        <span class="text-primary-red text-xs font-bold uppercase mb-2">Macroporous Cation</span>
+                        <h3 class="text-xl font-bold mb-3">D001 (LH-001)</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">Large pore structure with superior resistance to osmotic shock and high thermal stability. Ideal for high-speed industrial deionization.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                            <a href="product-detail.html" class="text-secondary-blue font-bold text-xs uppercase tracking-wider hover:text-primary-red transition-colors">Details <i class="fas fa-chevron-right ml-1"></i></a>
+                            <span class="text-[10px] text-gray-400 font-mono">CAS: 69011-20-7</span>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 3 (特种) -->
+                    <div class="product-card p-6 flex flex-col">
+                        <div class="h-48 bg-gray-50 mb-6 flex items-center justify-center relative overflow-hidden group">
+                            <img src="https://p3-doubao-search-sign.byteimg.com/labis/eba7225eac4472cd2e2edfefc781f723~tplv-be4g95zd3a-image.jpeg" alt="LH-836EH" class="object-cover h-full w-full opacity-90 transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-2 right-2">
+                                <label class="bg-white/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-secondary-blue flex items-center gap-1 cursor-pointer hover:bg-primary-red hover:text-white transition-all">
+                                    <input type="checkbox" class="accent-primary-red"> ADD TO INQUIRY
+                                </label>
+                            </div>
+                        </div>
+                        <span class="text-primary-red text-xs font-bold uppercase mb-2">Specialty Resin</span>
+                        <h3 class="text-xl font-bold mb-3">LH-836EH</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">Advanced acid-removal resin specifically for fire-resistant EH oil in power plants. Acid absorption efficiency >500% over traditional media.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                            <a href="product-detail.html" class="text-secondary-blue font-bold text-xs uppercase tracking-wider hover:text-primary-red transition-colors">Details <i class="fas fa-chevron-right ml-1"></i></a>
+                            <span class="text-[10px] text-gray-400 font-mono">Power Sector</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 分页 -->
+                <div class="mt-16 flex justify-center space-x-2">
+                    <button class="w-10 h-10 bg-primary-red text-white font-bold">1</button>
+                    <button class="w-10 h-10 border border-gray-200 hover:border-primary-red transition-colors">2</button>
+                    <button class="w-10 h-10 border border-gray-200 hover:border-primary-red transition-colors">3</button>
+                    <button class="px-4 h-10 border border-gray-200 hover:border-primary-red transition-colors font-bold text-xs uppercase">Next Page</button>
+                </div>
+
+                <!-- 新增：标准包装模块 -->
+                <section class="mt-24 pt-12 border-t border-gray-200">
+                    <h2 class="text-title-md title-underline mb-10">Industrial Packaging Options</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="pkg-card p-6 text-center">
+                            <div class="h-24 flex items-center justify-center mb-4"><i class="fas fa-shopping-bag text-4xl text-gray-300"></i></div>
+                            <h4 class="font-bold text-sm mb-1 uppercase">Standard Bag</h4>
+                            <p class="text-xs text-gray-500">25 Liters / PE Bag</p>
+                        </div>
+                        <div class="pkg-card p-6 text-center">
+                            <div class="h-24 flex items-center justify-center mb-4"><i class="fas fa-boxes text-4xl text-gray-300"></i></div>
+                            <h4 class="font-bold text-sm mb-1 uppercase">Super Sack</h4>
+                            <p class="text-xs text-gray-500">1,000 Liters / Bag</p>
+                        </div>
+                        <div class="pkg-card p-6 text-center">
+                            <div class="h-24 flex items-center justify-center mb-4"><i class="fas fa-pallet text-4xl text-gray-300"></i></div>
+                            <h4 class="font-bold text-sm mb-1 uppercase">Palletized</h4>
+                            <p class="text-xs text-gray-500">Shrink-wrapped Pallets</p>
+                        </div>
+                        <div class="pkg-card p-6 text-center">
+                            <div class="h-24 flex items-center justify-center mb-4"><i class="fas fa-truck-loading text-4xl text-gray-300"></i></div>
+                            <h4 class="font-bold text-sm mb-1 uppercase">Bulk Export</h4>
+                            <p class="text-xs text-gray-500">Containerized Loading</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- 浮动询价篮 -->
+    <div class="inquiry-basket" id="inquiry-trigger">
+        <i class="fas fa-file-invoice-dollar text-xl"></i>
+        <span class="font-bold text-sm uppercase tracking-wider">Inquiry Basket (<span id="cart-count">0</span>)</span>
+    </div>
+
+    <!-- 页脚 (全站统一) -->
+    <footer class="bg-white border-t-2 border-primary-red pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-2xl mb-4">LINHAI RESIN</div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">Synthesizing high-performance ion exchange resins for industrial and consumer sectors since 1972. Quality-driven chemical solutions.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-black uppercase mb-4 text-sm">Quick Links</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><a href="about.html" class="hover:text-primary-red transition-colors">About Us</a></li>
+                        <li><a href="rd-lab.html" class="hover:text-primary-red transition-colors">R&D Lab</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-red transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-black uppercase text-sm">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <i class="fab fa-linkedin text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                        <i class="fab fa-facebook text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                        <i class="fab fa-weixin text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-[10px] pt-8 border-t border-gray-100">&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd.</p>
+        </div>
+    </footer>
+
+    <!-- 询价篮简单计数脚本 -->
+    <script>
+        let count = 0;
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const countDisplay = document.getElementById('cart-count');
+        
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                count = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                countDisplay.innerText = count;
+            });
+        });
+    </script>
+</body>
+</html>

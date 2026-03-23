@@ -27,6 +27,34 @@
     </script>
 
     <style>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取导航栏中的搜索输入框和按钮
+        const searchInput = document.querySelector('nav input[type="text"]');
+        const searchBtn = document.querySelector('nav button');
+
+        if (searchInput && searchBtn) {
+            // 定义执行跳转的函数
+            const executeSearch = () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    // 跳转到产品页，并带上查询参数 q
+                    window.location.href = `products.html?q=${encodeURIComponent(query)}`;
+                }
+            };
+
+            // 监听回车键
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    executeSearch();
+                }
+            });
+
+            // 监听搜索图标点击
+            searchBtn.addEventListener('click', executeSearch);
+        }
+    });
+</script>
         body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; }
         .bg-molecular {
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");

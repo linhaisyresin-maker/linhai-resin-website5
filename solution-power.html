@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Linhai Resin Power & Energy Solutions - Specialized resins for condensate polishing, stator cooling, and LH-836EH for fire-resistant oil.">
+    <title>Power & Energy Solutions | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+        .bg-molecular {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .text-title-lg { font-size: 36px; font-weight: bold; }
+        .text-title-md { font-size: 28px; font-weight: bold; }
+        .text-subtitle { font-size: 20px; font-weight: bold; }
+        
+        .title-underline {
+            display: inline-block; position: relative; padding-bottom: 8px; border-bottom: 3px solid #D92121; text-transform: uppercase;
+        }
+
+        /* 重点产品展示区交互 */
+        .feature-box { border-left: 5px solid #D92121; background: #fdfdfd; transition: all 0.3s; }
+        .feature-box:hover { transform: translateX(10px); background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+        /* 推荐产品卡片 */
+        .rec-card { border: 1px solid #eee; transition: all 0.3s; background: #FFF; }
+        .rec-card:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+
+        /* 导航下拉菜单 (全站统一) */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 240px; border-top: 2px solid #D92121; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 100; }
+        .group:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-14">
+                <span class="font-arial-black text-[24px]">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="about.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">About Us</a>
+                        <a href="certifications.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Certifications & QA</a>
+                        <a href="news.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="py-6 hover:text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer text-primary-red font-bold">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="products.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Product Categories</a>
+                        <a href="solution-water.html" class="block p-4 bg-gray-50 text-primary-red font-bold">System Solutions</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="py-6 hover:text-primary-red">Contact Us</a>
+                <div class="flex items-center border border-gray-200 rounded px-2 h-10 ml-4">
+                    <input type="text" placeholder="Search power plant solutions..." class="outline-none text-sm w-48 font-normal">
+                    <button class="text-gray-400"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[450px] flex items-center overflow-hidden bg-secondary-blue">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-white text-title-lg uppercase tracking-tight mb-4">Power & Energy <br><span class="text-primary-red">Industrial Excellence</span></h1>
+            <p class="text-blue-100 max-w-2xl text-[20px] font-light leading-relaxed">
+                Critical separation solutions for modern power generation. Protecting EH systems, turbines, and reactors with ultra-pure ionic control.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-20 container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-title-md title-underline mx-auto">Critical Resin Applications in Power Plants</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="flex flex-col items-center text-center p-6">
+                <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-100 text-secondary-blue text-2xl">
+                    <i class="fas fa-faucet-drip"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Condensate Polishing</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Removing trace contaminants in high-flow condensate systems to prevent boiler corrosion and scaling. Our high-strength resins withstand extreme pressure differentials.</p>
+            </div>
+            <div class="flex flex-col items-center text-center p-6">
+                <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-100 text-secondary-blue text-2xl">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Stator Cooling Water</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Maintaining conductivity at < 0.1 µS/cm to ensure generator safety. Specialized mixed-bed resins prevent copper corrosion in cooling circuits.</p>
+            </div>
+            <div class="flex flex-col items-center text-center p-6">
+                <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-100 text-secondary-blue text-2xl">
+                    <i class="fas fa-biohazard"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Nuclear Grade Purification</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Ultra-low chloride and sulfate resins specifically synthesized for Primary and Secondary coolant loops in nuclear power facilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <h2 class="text-title-md title-underline mb-8">Solution Spotlight: LH-836EH</h2>
+                    <p class="text-subtitle text-primary-red mb-6">Revolutionary Acid Removal for Fire-Resistant (EH) Oil</p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        In thermal power plants, the degradation of phosphate ester fire-resistant oil (EH Oil) leads to increased acidity, causing servo valve sticking and system failure. Traditional media filters are insufficient.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="feature-box p-5 shadow-sm">
+                            <h4 class="font-bold text-black text-sm uppercase mb-1">500% Efficiency Increase</h4>
+                            <p class="text-xs text-gray-600">The LH-836EH specialized matrix offers an acid absorption efficiency over 5x higher than diatomaceous earth or activated alumina.</p>
+                        </div>
+                        <div class="feature-box p-5 shadow-sm">
+                            <h4 class="font-bold text-black text-sm uppercase mb-1">Zero Metal Ion Release</h4>
+                            <p class="text-xs text-gray-600">Unlike traditional filters, our resin does not release metal ions, preventing secondary oil sludge formation and extending oil life by 3-5 years.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 border border-gray-100 shadow-xl rounded-sm">
+                    <h3 class="font-bold text-center mb-8 text-secondary-blue uppercase tracking-widest text-sm italic">EH Oil System Health Indicators</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2 uppercase"><span>Acidity Reduction Rate</span> <span class="text-primary-red">99.8%</span></div>
+                            <div class="w-full bg-gray-100 h-2"><div class="bg-primary-red h-full w-[99.8%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2 uppercase"><span>Resistivity Improvement</span> <span class="text-primary-red">> 5.0 GΩ·cm</span></div>
+                            <div class="w-full bg-gray-100 h-2"><div class="bg-primary-red h-full w-[90%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2 uppercase"><span>Particle Removal (ISO 4406)</span> <span class="text-primary-red">Class 14/11</span></div>
+                            <div class="w-full bg-gray-100 h-2"><div class="bg-primary-red h-full w-[85%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="mt-10 p-4 bg-blue-50 border border-blue-100 text-[11px] text-blue-800 leading-relaxed">
+                        <i class="fas fa-info-circle mr-1"></i> <strong>Case Study:</strong> A 600MW supercritical unit achieved stable operation for 24 months without EH oil replacement after switching to LH-836EH filtration.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-4">
+        <h2 class="text-title-md title-underline mb-12">Engineered for Energy</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="rec-card p-8 flex flex-col items-center text-center">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p3-doubao-search-sign.byteimg.com/labis/eba7225eac4472cd2e2edfefc781f723~tplv-be4g95zd3a-image.jpeg" alt="LH-836EH" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">LH-836EH</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4 tracking-widest">EH Oil Specialist</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">Specialized matrix for acidity control in phosphate ester fire-resistant oils.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue transition-all">Tech Specs ></a>
+            </div>
+            
+            <div class="rec-card p-8 flex flex-col items-center text-center">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/954393857058144261~tplv-be4g95zd3a-image.jpeg" alt="D001-SC" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">D001-SC</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4 tracking-widest">Condensate Polishing</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">Super-macroporous cation resin with ultra-high mechanical strength for high-pressure systems.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue transition-all">Tech Specs ></a>
+            </div>
+
+            <div class="rec-card p-8 flex flex-col items-center text-center">
+                <div class="h-40 w-40 bg-gray-50 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-gray-100">
+                    <img src="https://p3-doubao-search-sign.byteimg.com/labis/1c973721bb4aeb740f2dd88dc7f4f79d~tplv-be4g95zd3a-image.jpeg" alt="LH-7715NG" class="h-full w-full object-cover">
+                </div>
+                <h3 class="text-subtitle mb-2">LH-7715NG</h3>
+                <p class="text-xs text-gray-400 uppercase font-bold mb-4 tracking-widest">Nuclear Grade Mixed Bed</p>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">Ready-to-use resin blend with ≥99% regeneration degree for ultra-low ionic leakage.</p>
+                <a href="product-detail.html" class="text-primary-red font-bold text-xs uppercase border-b-2 border-primary-red pb-1 hover:text-secondary-blue transition-all">Tech Specs ></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-secondary-blue text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6">REDUCE TURBINE DOWNTIME TODAY</h2>
+            <p class="text-blue-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Contact our specialized energy engineering team for a customized EH oil filtration audit or condensate polishing system optimization.
+            </p>
+            <a href="contact.html" class="inline-block bg-primary-red text-white px-12 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-primary-red transition-all shadow-2xl">Consult an Engineer</a>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t-2 border-primary-red pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-2xl mb-4">LINHAI RESIN</div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">Synthesizing high-performance ion exchange resins for industrial and consumer sectors since 1972. Quality-driven chemical solutions.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-black uppercase mb-4 text-sm">Resources</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><a href="about.html" class="hover:text-primary-red transition-colors">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Products</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-red transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-black uppercase text-sm">Connect</h4>
+                    <div class="flex gap-4">
+                        <i class="fab fa-linkedin text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                        <i class="fab fa-facebook text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                        <i class="fab fa-weixin text-2xl text-secondary-blue cursor-pointer hover:text-primary-red"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-[10px] pt-8 border-t border-gray-100 uppercase tracking-widest font-bold">&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="contact.html" class="fixed bottom-8 right-8 bg-secondary-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:bg-primary-red hover:scale-110 transition-all z-50 cursor-pointer">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+</body>
+</html>

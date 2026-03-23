@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with LINHAI RESIN - Global headquarters, career opportunities, and technical inquiry portal.">
+    <title>Contact Us | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+        .bg-molecular {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .text-title-lg { font-size: 32px; font-weight: bold; }
+        .text-title-md { font-size: 28px; font-weight: bold; }
+        .text-subtitle { font-size: 20px; font-weight: bold; }
+        
+        .title-underline {
+            display: inline-block; position: relative; padding-bottom: 8px; border-bottom: 3px solid #D92121; text-transform: uppercase;
+        }
+
+        /* 导航下拉 */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 240px; border-top: 2px solid #D92121; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 100; }
+        .group:hover .dropdown-menu { display: block; }
+
+        /* 卡片交互 */
+        .feature-card { transition: all 0.3s ease; border: 1px solid #eee; }
+        .feature-card:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+
+        /* 职业区图片组交互 */
+        .photo-grid img { transition: all 0.5s ease; filter: grayscale(20%); }
+        .photo-grid img:hover { filter: grayscale(0); transform: scale(1.03); }
+        
+        /* 按钮悬浮 */
+        .btn-solid { background-color: #D92121; color: #FFF; transition: all 0.3s; display: inline-block; text-align: center; border: 2px solid #D92121; }
+        .btn-solid:hover { background-color: #b01a1a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(217,33,33,0.3); }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-14">
+                <span class="font-arial-black text-[24px]">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="about.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">About Us</a>
+                        <a href="certifications.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Certifications & QA</a>
+                        <a href="news.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="py-6 hover:text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal text-base">
+                        <a href="products.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Product Categories</a>
+                        <a href="solution-water.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">System Solutions</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="py-6 text-primary-red font-bold">Contact Us</a>
+                <div class="flex items-center border border-gray-200 rounded px-2 h-10 ml-4">
+                    <input type="text" placeholder="Search..." class="outline-none text-sm w-48 font-normal">
+                    <button class="text-gray-400"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-20 bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-primary-red font-bold uppercase tracking-[0.3em] mb-4 text-xs">Our Commitment</p>
+            <h1 class="text-4xl md:text-5xl font-arial-black text-black leading-tight max-w-4xl mx-auto uppercase">
+                Serving Customers, Achieving Employees,<br>and Returning to Society.
+            </h1>
+            <div class="w-20 h-1 bg-primary-red mx-auto mt-8"></div>
+            <p class="text-gray-500 mt-8 max-w-2xl mx-auto text-lg italic">
+                "Creating value is the only reason for our existence. Since 1972, we've dedicated our chemistry to a cleaner, safer world."
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-title-md title-underline mb-10">Global Headquarters</h2>
+                <div class="space-y-8 mb-12">
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">
+                            <i class="fas fa-map-marked-alt text-primary-red text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase text-secondary-blue mb-1">HQ Address</h4>
+                            <p class="text-gray-600">No. 190-1 Haicheng Rd, Sheyang County, Yancheng, Jiangsu, China</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">
+                            <i class="fas fa-phone-volume text-primary-red text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase text-secondary-blue mb-1">Direct Line</h4>
+                            <p class="text-gray-600 font-bold">+86 515 8889 5989</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">
+                            <i class="fas fa-paper-plane text-primary-red text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase text-secondary-blue mb-1">Official Email</h4>
+                            <a href="mailto:info@jslhresin.com" class="text-primary-red font-bold hover:underline">info@jslhresin.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h-80 bg-gray-200 border border-gray-200 shadow-inner overflow-hidden">
+                    <iframe 
+                        src="http://googleusercontent.com/maps.google.com/2" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-10 border border-gray-200 shadow-lg">
+                <h2 class="text-2xl font-bold mb-2 uppercase tracking-tight">Technical Inquiry</h2>
+                <p class="text-sm text-gray-500 mb-8">Ready to consult an engineer? Fill out the form below and we will respond within 24 hours.</p>
+                
+                <form onsubmit="alert('Thank you for your inquiry. A technical specialist will contact you within 24 hours.'); return false;" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <input type="text" placeholder="Your Name *" required class="w-full p-3 border border-gray-300 outline-none focus:border-primary-red transition-all">
+                        <input type="email" placeholder="Business Email *" required class="w-full p-3 border border-gray-300 outline-none focus:border-primary-red transition-all">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <input type="text" placeholder="Phone Number" class="w-full p-3 border border-gray-300 outline-none focus:border-primary-red transition-all">
+                        <input type="text" placeholder="Subject / Resin Model" class="w-full p-3 border border-gray-300 outline-none focus:border-primary-red transition-all">
+                    </div>
+                    <textarea rows="5" placeholder="Project Details or Technical Challenges..." class="w-full p-3 border border-gray-300 outline-none focus:border-primary-red transition-all resize-none"></textarea>
+                    
+                    <div class="flex items-center gap-3 text-xs text-gray-500 bg-white p-3 border border-dashed border-gray-300 cursor-pointer hover:bg-gray-100">
+                        <i class="fas fa-paperclip"></i> Attach Water Analysis Report (Optional)
+                    </div>
+
+                    <button type="submit" class="btn-solid w-full py-4 font-bold uppercase tracking-widest text-sm shadow-md mt-4">Initialize Transmission</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="feature-card p-10 flex gap-8 items-center bg-gray-50">
+                <div class="text-secondary-blue text-5xl shrink-0"><i class="fas fa-globe-americas"></i></div>
+                <div>
+                    <h3 class="text-subtitle mb-2 uppercase tracking-wide">Global Network</h3>
+                    <p class="text-sm text-gray-600 mb-4">Exporting to 100+ countries with established logistics hubs in Asia, Europe, and the CIS region.</p>
+                    <a href="#" class="text-primary-red font-bold text-xs uppercase hover:text-black">Find a Distributor ></a>
+                </div>
+            </div>
+            <div class="feature-card p-10 flex gap-8 items-center bg-gray-50">
+                <div class="text-secondary-blue text-5xl shrink-0"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                    <h3 class="text-subtitle mb-2 uppercase tracking-wide">Certified Excellence</h3>
+                    <p class="text-sm text-gray-600 mb-4">Fully REACH registered and WQA Gold Seal certified. We adhere to the highest international chemical standards.</p>
+                    <a href="certifications.html" class="text-primary-red font-bold text-xs uppercase hover:text-black">View All Licenses ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-[100px] container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <h2 class="text-title-md title-underline mb-6">Join Our Polymer Experts</h2>
+                <p class="text-gray-700 leading-relaxed mb-8">
+                    Are you passionate about the future of green chemistry and ion exchange technology? At Linhai Resin, we foster a culture of scientific curiosity and industrial rigor. Join a team where your expertise in chemical engineering and R&D can make a global impact.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#" class="btn-solid px-8 py-4 font-bold uppercase text-xs tracking-widest">View Open Positions</a>
+                    <a href="mailto:hr@jslhresin.com" class="px-8 py-4 border-2 border-secondary-blue text-secondary-blue font-bold uppercase text-xs tracking-widest hover:bg-secondary-blue hover:text-white transition-all text-center">Inquire HR Department</a>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2 grid grid-cols-2 gap-4 photo-grid">
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=400&q=80" alt="Lab" class="w-full h-64 object-cover shadow-md">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Team" class="w-full h-48 object-cover shadow-md">
+                </div>
+                <div class="pt-10 space-y-4">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="Facility" class="w-full h-48 object-cover shadow-md">
+                    <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?auto=format&fit=crop&w=400&q=80" alt="R&D" class="w-full h-64 object-cover shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t-2 border-primary-red pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-2xl mb-4 text-black">LINHAI RESIN</div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">Mastering polymer synthesis since 1972. We engineer high-performance ion exchange resins for industrial, food, and nuclear sectors globally.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-black uppercase mb-4 text-sm font-bold tracking-widest">Solutions</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><a href="solution-water.html" class="hover:text-primary-red">Water Treatment</a></li>
+                        <li><a href="solution-power.html" class="hover:text-primary-red">Power & Energy</a></li>
+                        <li><a href="solution-metal.html" class="hover:text-primary-red">Metallurgy Recovery</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-black uppercase text-sm font-bold tracking-widest">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-secondary-blue hover:text-primary-red text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-secondary-blue hover:text-primary-red text-2xl transition-colors"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="text-secondary-blue hover:text-primary-red text-2xl transition-colors"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-[10px] pt-8 border-t border-gray-100 uppercase tracking-widest font-bold">&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="contact.html" class="fixed bottom-8 right-8 bg-secondary-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:bg-primary-red hover:scale-110 transition-all z-50 cursor-pointer">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical specifications and data sheet for LINHAI RESIN products.">
+    <title>Product Details | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FFFFFF; color: #000; font-family: Arial, sans-serif; font-size: 16px; }
+        .bg-molecular {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000' fill-opacity='0.04'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .title-underline {
+            display: inline-block; position: relative; padding-bottom: 8px; border-bottom: 3px solid #D92121; text-transform: uppercase; font-weight: bold;
+        }
+        
+        /* 表格样式 */
+        .specs-table th { background-color: #f9fafb; border: 1px solid #eee; padding: 12px; text-align: left; font-size: 14px; color: #1A365D; }
+        .specs-table td { border: 1px solid #eee; padding: 12px; font-size: 14px; }
+        .specs-table tr:hover { background-color: #fffafa; }
+
+        /* 侧边栏样式 */
+        .sidebar-item { border-left: 4px solid transparent; transition: all 0.2s; cursor: pointer; }
+        .sidebar-item:hover { background-color: #f3f4f6; color: #D92121; padding-left: 1.5rem; }
+        .sidebar-item.active { border-left-color: #D92121; background-color: #f9fafb; color: #D92121; font-weight: bold; }
+
+        /* 按钮交互 */
+        .btn-action { transition: all 0.3s; border: 2px solid #D92121; text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-red { background: #D92121; color: #fff; }
+        .btn-red:hover { background: #b01a1a; border-color: #b01a1a; transform: translateY(-2px); }
+        .btn-outline { color: #D92121; }
+        .btn-outline:hover { background: #D92121; color: #fff; transform: translateY(-2px); }
+
+        /* 导航下拉 */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 240px; border-top: 2px solid #D92121; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 100; }
+        .group:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-14">
+                <span class="font-arial-black text-[24px]">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer hover:text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal">
+                        <a href="about.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">About Us</a>
+                        <a href="certifications.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Certifications</a>
+                        <a href="news.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="py-6 hover:text-primary-red">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer text-primary-red font-bold">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu text-black font-normal">
+                        <a href="products.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">Product Categories</a>
+                        <a href="solution-water.html" class="block p-4 hover:bg-gray-50 hover:text-primary-red">System Solutions</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="py-6 hover:text-primary-red">Contact Us</a>
+                <div class="flex items-center border border-gray-200 rounded px-2 h-10 ml-4">
+                    <input type="text" placeholder="Search resin models..." class="outline-none text-sm w-48 font-normal">
+                    <button class="text-gray-400"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-12">
+        <nav class="text-xs text-gray-500 mb-8 flex gap-2 uppercase tracking-widest font-bold">
+            <a href="index.html" class="hover:text-primary-red">Home</a> 
+            <span>/</span> 
+            <a href="products.html" class="hover:text-primary-red">Products</a> 
+            <span>/</span> 
+            <span class="text-black">LH-520Z Zinc Removal Resin</span>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row gap-16">
+            
+            <aside class="lg:w-1/4 hidden lg:block">
+                <div class="sticky top-[120px]">
+                    <h2 class="text-lg font-bold mb-6 border-b-2 border-primary-red pb-2 uppercase">Product Lines</h2>
+                    <nav class="flex flex-col space-y-1 text-sm">
+                        <a href="products.html" class="sidebar-item px-4 py-3">Strong Acid Cation</a>
+                        <a href="products.html" class="sidebar-item px-4 py-3">Macroporous Adsorption</a>
+                        <a href="products.html" class="sidebar-item active px-4 py-3">Specialty & Chelating</a>
+                        <a href="products.html" class="sidebar-item px-4 py-3">Mixed Bed Resins</a>
+                    </nav>
+
+                    <div class="mt-12 p-6 bg-gray-50 border border-gray-200">
+                        <h3 class="font-bold text-sm mb-4">Technical Files</h3>
+                        <div class="space-y-3">
+                            <a href="#" class="flex items-center gap-2 text-xs text-gray-600 hover:text-primary-red"><i class="fas fa-file-pdf text-primary-red text-lg"></i> DOWNLOAD TDS</a>
+                            <a href="#" class="flex items-center gap-2 text-xs text-gray-600 hover:text-primary-red"><i class="fas fa-file-shield text-primary-red text-lg"></i> DOWNLOAD MSDS</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="lg:w-3/4">
+                <div class="flex flex-col md:flex-row gap-12 mb-16">
+                    <div class="md:w-1/2 bg-gray-50 aspect-square flex items-center justify-center border border-gray-100 shadow-inner p-8">
+                        <img src="https://p3-doubao-search-sign.byteimg.com/labis/eba7225eac4472cd2e2edfefc781f723~tplv-be4g95zd3a-image.jpeg" alt="LH-520Z" class="max-w-full max-h-full object-contain mix-blend-multiply">
+                    </div>
+                    <div class="md:w-1/2">
+                        <span class="text-primary-red font-bold text-sm tracking-widest border-l-4 border-primary-red pl-3 uppercase">Specialty Chelating Resin</span>
+                        <h1 class="text-4xl font-bold mt-4 mb-6">LH-520Z</h1>
+                        <p class="text-xl text-secondary-blue font-bold mb-6">Wastewater Zinc Removal Specialized Resin</p>
+                        
+                        <div class="space-y-4 text-gray-600 text-sm mb-10 leading-relaxed">
+                            <p><i class="fas fa-check text-primary-red mr-2"></i> High selectivity for Zinc ions in acidic wastewater.</p>
+                            <p><i class="fas fa-check text-primary-red mr-2"></i> Superior macroporous structure for fast kinetics.</p>
+                            <p><i class="fas fa-check text-primary-red mr-2"></i> Exceptional mechanical strength and osmotic stability.</p>
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <a href="contact.html" class="btn-action btn-red w-full py-4 text-sm">CONTACT SALES ENGINEER</a>
+                            <div class="flex gap-4">
+                                <a href="#" class="btn-action btn-outline flex-1 py-3 text-xs"><i class="fas fa-download mr-2"></i> TECHNICAL DATA</a>
+                                <a href="#" class="btn-action btn-outline flex-1 py-3 text-xs"><i class="fas fa-plus mr-2"></i> ADD TO INQUIRY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="text-title-md title-underline mb-8">Technical Specifications</h2>
+                    <table class="w-full specs-table border-collapse">
+                        <thead>
+                            <tr>
+                                <th>Property / Metric</th>
+                                <th>Value / Range</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ionic Form (As shipped)</strong></td>
+                                <td>Na+ (Sodium Form)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Appearance</strong></td>
+                                <td>Milky white to light yellow opaque spherical beads</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moisture Retention (%)</strong></td>
+                                <td>50.0 - 58.0 %</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Volume Exchange Capacity (mmol/ml)</strong></td>
+                                <td>≥ 0.60 mmol/ml</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wet True Density (g/ml)</strong></td>
+                                <td>1.10 - 1.20 g/ml</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shipping Weight (g/ml)</strong></td>
+                                <td>0.70 - 0.80 g/ml</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Particle Size Range (0.315-1.25mm)</strong></td>
+                                <td>≥ 95 %</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Max. Operating Temperature</strong></td>
+                                <td>80 °C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>pH Range</strong></td>
+                                <td>1 - 14</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mb-16 p-8 bg-gray-50 border border-gray-200">
+                    <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-vial text-primary-red"></i> 
+                        SUGGESTED OPERATING CONDITIONS
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                        <ul class="space-y-3">
+                            <li class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500 uppercase">Service Flow Rate</span> <span class="font-bold">5 - 15 BV/h</span></li>
+                            <li class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500 uppercase">Regenerant</span> <span class="font-bold">3 - 5% HCl</span></li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500 uppercase">Regeneration Flow Rate</span> <span class="font-bold">2 - 4 BV/h</span></li>
+                            <li class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500 uppercase">Rinse Water</span> <span class="font-bold">Pure Water</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold mb-8 uppercase tracking-widest border-b-2 border-gray-100 pb-2">Related Products</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <a href="#" class="flex items-center gap-6 p-4 border border-gray-100 hover:border-primary-red transition-all group">
+                            <div class="w-20 h-20 bg-gray-50 shrink-0 flex items-center justify-center font-bold text-gray-300">LH-405</div>
+                            <div>
+                                <h4 class="font-bold group-hover:text-primary-red">LH-405 Selective Resin</h4>
+                                <p class="text-xs text-gray-500">Targeted mercury (Hg) removal.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-6 p-4 border border-gray-100 hover:border-primary-red transition-all group">
+                            <div class="w-20 h-20 bg-gray-50 shrink-0 flex items-center justify-center font-bold text-gray-300">LH-403</div>
+                            <div>
+                                <h4 class="font-bold group-hover:text-primary-red">LH-403 Boron Selective</h4>
+                                <p class="text-xs text-gray-500">High efficiency boron adsorption.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t-2 border-primary-red pt-12 pb-6 mt-20">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            <div class="md:col-span-2">
+                <div class="font-arial-black text-[20px] mb-4">LINHAI RESIN</div>
+                <p class="text-gray-600 text-sm mb-6 max-w-sm">Mastering polymer synthesis since 1972. We engineer high-performance ion exchange resins for industrial, food, and nuclear sectors globally.</p>
+                <div class="flex gap-4">
+                    <i class="fab fa-linkedin text-xl text-secondary-blue hover:text-primary-red cursor-pointer"></i>
+                    <i class="fab fa-facebook text-xl text-secondary-blue hover:text-primary-red cursor-pointer"></i>
+                    <i class="fab fa-weixin text-xl text-secondary-blue hover:text-primary-red cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-sm">Technical</h4>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><a href="#" class="hover:text-primary-red">Safety Data Sheets</a></li>
+                    <li><a href="#" class="hover:text-primary-red">Regeneration Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-sm">Linhai Resin</h4>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><a href="about.html" class="hover:text-primary-red">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-primary-red">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LINHAI RESIN Certifications, Quality Assurance & EHS Standards.">
+    <title>Certifications & Quality | LINHAI RESIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#D92121',
+                        'secondary-blue': '#1A365D',
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'arial-black': ['"Arial Black"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 16px; 
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { color: #000000; }
+        .text-title-lg { font-size: 32px; font-weight: bold; }
+        .text-title-md { font-size: 28px; font-weight: bold; }
+        .text-subtitle { font-size: 20px; font-weight: bold; }
+
+        /* 分子结构暗纹背景 */
+        .bg-molecular {
+            background-color: #FFFFFF;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.923' viewBox='0 0 60 103.923' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.923L0 86.603V51.962L30 34.641l30 17.321v34.64l-30 17.321zm0-3.464l27-15.588v-31.177L30 38.105 3 53.694v31.177l27 15.588z' fill='%23000000' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        /* 标题红色下划线装饰 */
+        .title-underline {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .title-underline::after {
+            content: ''; position: absolute; left: 0; bottom: 0;
+            width: 100%; height: 3px; background-color: #D92121;
+        }
+
+        /* 导航栏交互 */
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link:hover { color: #D92121; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0;
+            background-color: #FFF; min-width: 240px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-top: 2px solid #D92121; z-index: 50;
+        }
+        .group:hover .dropdown-menu { display: block; }
+        .dropdown-item {
+            display: block; padding: 12px 20px; font-size: 16px;
+            border-bottom: 1px solid #f3f4f6; transition: all 0.2s; color: #000;
+        }
+        .dropdown-item:hover { color: #D92121; background-color: #f9fafb; padding-left: 25px; }
+
+        /* 通用交互 */
+        .btn-outline { border: 2px solid #D92121; color: #D92121; transition: all 0.3s; background: transparent; }
+        .btn-outline:hover { background-color: #D92121; color: #FFF; transform: translateY(-2px); }
+        .card-blue-border { border: 1px solid #1A365D; transition: all 0.3s; background: #FFF; }
+        .card-blue-border:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        
+        /* 证书卡片交互 */
+        .cert-card { transition: all 0.3s ease; border: 1px solid #eee; background: #FFF; cursor: pointer; }
+        .cert-card:hover { border-color: #D92121; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .cert-img-container { overflow: hidden; background: #f9f9f9; padding: 20px; display: flex; align-items: center; justify-content: center; height: 320px; }
+        .cert-img-container img { transition: transform 0.5s ease; max-height: 100%; max-width: 100%; object-fit: contain; mix-blend-mode: multiply; }
+        .cert-card:hover .cert-img-container img { transform: scale(1.05); }
+
+        /* 弹窗遮罩 */
+        #cert-modal { transition: opacity 0.3s ease; backdrop-filter: blur(5px); }
+        .modal-active { display: flex !important; }
+    </style>
+</head>
+<body class="bg-molecular pt-[80px]">
+
+    <!-- 全局统一导航栏 -->
+    <nav class="fixed w-full top-0 left-0 bg-white z-50 border-b border-primary-red h-[80px] flex items-center shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="LINHAI RESIN Logo" class="h-14 object-contain">
+                <span class="font-arial-black text-[24px] text-black tracking-tight">LINHAI RESIN</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[18px]">
+                <div class="group relative py-6 cursor-pointer nav-link text-primary-red">
+                    Company <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">About Us</a>
+                        <a href="certifications.html" class="dropdown-item text-primary-red bg-gray-50">Certifications & QA</a>
+                        <a href="news.html" class="dropdown-item">News & Events</a>
+                    </div>
+                </div>
+                <a href="rd-lab.html" class="nav-link py-6">R&D LAB</a>
+                <div class="group relative py-6 cursor-pointer nav-link">
+                    Products <i class="fas fa-angle-down text-sm ml-1"></i>
+                    <div class="dropdown-menu">
+                        <a href="products.html" class="dropdown-item">Product Categories</a>
+                        <div class="px-5 py-2 text-xs text-gray-400 font-bold uppercase tracking-wider bg-gray-50">Systems Solutions</div>
+                        <a href="solution-water.html" class="dropdown-item pl-8">→ Water Treatment</a>
+                        <a href="solution-pharma.html" class="dropdown-item pl-8">→ Pharma & Biotech</a>
+                        <a href="solution-metal.html" class="dropdown-item pl-8">→ Metallurgy Extraction</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link py-6">Contact Us</a>
+                <div class="flex items-center border border-gray-300 rounded overflow-hidden h-10 ml-4">
+                    <input type="text" placeholder="Search resin products & technical data..." class="px-3 py-2 w-64 text-[14px] font-normal outline-none focus:bg-gray-50">
+                    <button class="px-4 text-gray-500 hover:text-primary-red bg-white"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部标题 -->
+    <header class="py-[60px] container mx-auto px-4 text-center">
+        <h1 class="text-title-lg title-underline">CERTIFICATIONS & QUALITY ASSURANCE</h1>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-2">More than just documents—our certifications reflect a deeply ingrained culture of rigorous quality control, environmental stewardship, and industrial safety.</p>
+    </header>
+
+    <!-- 1. QMS 质量管理体系模块 -->
+    <section class="py-[60px] bg-gray-50 border-y border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-title-md title-underline mx-auto">OUR QUALITY MANAGEMENT SYSTEM</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 mt-4">A closed-loop quality control process ensures atomic-level precision from raw material intake to final product delivery.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 步骤 1 -->
+                <div class="card-blue-border p-8 text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-300 group-hover:bg-primary-red transition-colors"></div>
+                    <i class="fas fa-vials text-5xl text-secondary-blue group-hover:text-primary-red transition-colors mb-6"></i>
+                    <h3 class="text-subtitle text-black mb-3 uppercase">01. Raw Material Inspection</h3>
+                    <p class="text-sm text-gray-600">Strict purity checks on monomers and cross-linking agents before they enter our facility. We source only premium-grade styrene and DVB.</p>
+                </div>
+                <!-- 步骤 2 -->
+                <div class="card-blue-border p-8 text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-300 group-hover:bg-primary-red transition-colors"></div>
+                    <i class="fas fa-cogs text-5xl text-secondary-blue group-hover:text-primary-red transition-colors mb-6"></i>
+                    <h3 class="text-subtitle text-black mb-3 uppercase">02. In-Process Monitoring</h3>
+                    <p class="text-sm text-gray-600">Real-time control of polymerization temperature and cross-linking density to ensure optimal porosity and mechanical stability of the resin matrix.</p>
+                </div>
+                <!-- 步骤 3 -->
+                <div class="card-blue-border p-8 text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-300 group-hover:bg-primary-red transition-colors"></div>
+                    <i class="fas fa-microscope text-5xl text-secondary-blue group-hover:text-primary-red transition-colors mb-6"></i>
+                    <h3 class="text-subtitle text-black mb-3 uppercase">03. Final Lab Testing</h3>
+                    <p class="text-sm text-gray-600">Every batch undergoes exhaustive testing for exchange capacity, moisture retention, true density, and sphericity before receiving a COA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 核心证书网格展示区 -->
+    <section class="py-[80px] container mx-auto px-4">
+        <div class="mb-12">
+            <h2 class="text-title-md title-underline">GLOBAL ACCREDITATIONS</h2>
+            <p class="text-gray-600">Click on any certificate to view details. These accreditations allow our resins to be safely used in 100+ countries.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 证书 1: WQA -->
+            <div class="cert-card flex flex-col h-full" onclick="openModal('https://images.unsplash.com/photo-1603504344585-78c66dd8f168?auto=format&fit=crop&w=600&q=80', 'WQA Gold Seal Certificate')">
+                <div class="cert-img-container border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1603504344585-78c66dd8f168?auto=format&fit=crop&w=600&q=80" alt="WQA Gold Seal Certificate" class="filter grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-black">WQA Gold Seal</h3>
+                        <div class="w-8 h-1 bg-primary-red mx-auto mb-3"></div>
+                        <p class="text-sm text-gray-600">Certified by the Water Quality Association (USA) for strict drinking water safety standards.</p>
+                    </div>
+                    <span class="text-primary-red text-xs font-bold uppercase tracking-wider mt-4 block"><i class="fas fa-search-plus mr-1"></i> Click to enlarge</span>
+                </div>
+            </div>
+
+            <!-- 证书 2: EU REACH -->
+            <div class="cert-card flex flex-col h-full" onclick="openModal('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80', 'EU REACH Registration')">
+                <div class="cert-img-container border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" alt="EU REACH" class="filter grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-black">EU REACH</h3>
+                        <div class="w-8 h-1 bg-primary-red mx-auto mb-3"></div>
+                        <p class="text-sm text-gray-600">Fully registered under the European Union's stringent chemical safety and environmental regulations.</p>
+                    </div>
+                    <span class="text-primary-red text-xs font-bold uppercase tracking-wider mt-4 block"><i class="fas fa-search-plus mr-1"></i> Click to enlarge</span>
+                </div>
+            </div>
+
+            <!-- 证书 3: Food Hygiene -->
+            <div class="cert-card flex flex-col h-full" onclick="openModal('https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80', 'Drinking Water & Food Hygiene License')">
+                <div class="cert-img-container border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80" alt="Food Hygiene License" class="filter grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-black">Food Hygiene License</h3>
+                        <div class="w-8 h-1 bg-primary-red mx-auto mb-3"></div>
+                        <p class="text-sm text-gray-600">Provincial approval for safe use in drinking water preparation and food/beverage processing.</p>
+                    </div>
+                    <span class="text-primary-red text-xs font-bold uppercase tracking-wider mt-4 block"><i class="fas fa-search-plus mr-1"></i> Click to enlarge</span>
+                </div>
+            </div>
+
+            <!-- 证书 4: ISO -->
+            <div class="cert-card flex flex-col h-full" onclick="openModal('https://images.unsplash.com/photo-1568283094545-a162232a510f?auto=format&fit=crop&w=600&q=80', 'ISO Management System')">
+                <div class="cert-img-container border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1568283094545-a162232a510f?auto=format&fit=crop&w=600&q=80" alt="ISO Certification" class="filter grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-black">ISO 9001 / 14001</h3>
+                        <div class="w-8 h-1 bg-primary-red mx-auto mb-3"></div>
+                        <p class="text-sm text-gray-600">Certified standards for comprehensive quality management and environmental protection systems.</p>
+                    </div>
+                    <span class="text-primary-red text-xs font-bold uppercase tracking-wider mt-4 block"><i class="fas fa-search-plus mr-1"></i> Click to enlarge</span>
+                </div>
+            </div>
+
+            <!-- 证书 5: Association Director -->
+            <div class="cert-card flex flex-col h-full" onclick="openModal('https://images.unsplash.com/photo-1589330694653-efa64753ba0a?auto=format&fit=crop&w=600&q=80', 'Director Unit Plaque')">
+                <div class="cert-img-container border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1589330694653-efa64753ba0a?auto=format&fit=crop&w=600&q=80" alt="Director Unit" class="filter grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-black">Director Unit</h3>
+                        <div class="w-8 h-1 bg-primary-red mx-auto mb-3"></div>
+                        <p class="text-sm text-gray-600">Official Director Unit plaque from the China Ion Exchange Resin Industry Association.</p>
+                    </div>
+                    <span class="text-primary-red text-xs font-bold uppercase tracking-wider mt-4 block"><i class="fas fa-search-plus mr-1"></i> Click to enlarge</span>
+                </div>
+            </div>
+
+            <!-- 证书 6: AAA Credit -->
+            <div class="cert-card flex flex-col h-full" onclick="openModal('https://images.unsplash.com/photo-1621243804936-775306a8f2e3?auto=format&fit=crop&w=600&q=80', 'AAA Quality and Integrity Brand')">
+                <div class="cert-img-container border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1621243804936-775306a8f2e3?auto=format&fit=crop&w=600&q=80" alt="AAA Credit" class="filter grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-black">AAA Enterprise</h3>
+                        <div class="w-8 h-1 bg-primary-red mx-auto mb-3"></div>
+                        <p class="text-sm text-gray-600">Awarded the prestigious "AAA Quality and Integrity Brand" for consistent business ethics.</p>
+                    </div>
+                    <span class="text-primary-red text-xs font-bold uppercase tracking-wider mt-4 block"><i class="fas fa-search-plus mr-1"></i> Click to enlarge</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. EHS 环保与安全承诺 -->
+    <section class="py-[80px] bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative h-96 bg-gray-200 border border-gray-300">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Eco-friendly Laboratory" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 bg-primary-red text-white px-6 py-3 font-bold uppercase tracking-widest text-sm shadow-md">GREEN MANUFACTURING</div>
+                </div>
+                <div>
+                    <h2 class="text-title-md title-underline mb-6">ENVIRONMENTAL, HEALTH & SAFETY (EHS)</h2>
+                    <p class="mb-4 text-gray-700 leading-relaxed">
+                        At Linhai Resin, we believe that high-performance chemistry must go hand-in-hand with environmental stewardship and human safety. Our entire production line is optimized to minimize waste, reduce energy consumption, and control emissions.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Achieving <strong>EU REACH registration</strong> and strictly adhering to provincial <strong>Drinking Water & Food Hygiene</strong> regulations is a testament to our commitment. We manufacture sustainable ion exchange resins that safely purify the water you drink and the medications you rely on, without compromising the planet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 质量文件下载中心 -->
+    <section class="py-[60px] bg-[#f5f5f5] border-t border-gray-200">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-6 md:mb-0">
+                <i class="fas fa-file-pdf text-5xl text-primary-red mr-6"></i>
+                <div>
+                    <h3 class="text-subtitle text-black uppercase mb-1">Vendor Setup & Audit Documents</h3>
+                    <p class="text-sm text-gray-600">Require comprehensive documentation for your procurement compliance?</p>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="btn-outline px-8 py-3 font-bold uppercase tracking-wide inline-block" onclick="alert('Download started. (Demo link)')"><i class="fas fa-download mr-2"></i> Download Quality Manual</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全局统一页脚 -->
+    <footer class="bg-white border-t-2 border-primary-red pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <div class="md:col-span-2">
+                    <div class="font-arial-black text-[20px] text-black mb-4 flex items-center gap-2">
+                        <img src="logo.png" alt="Logo" class="h-6"> LINHAI RESIN
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6 max-w-sm">Mastering polymer synthesis since 1972. We engineer high-performance ion exchange resins for industrial, food, and nuclear sectors globally.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary-blue hover:bg-primary-red hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary-blue hover:bg-primary-red hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary-blue hover:bg-primary-red hover:text-white transition-colors"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-black uppercase">PRODUCTS</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Gel Cation</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Macroporous</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Chelating</a></li>
+                        <li><a href="products.html" class="hover:text-primary-red transition-colors">Food Grade</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-black uppercase">COMPANY</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="about.html" class="hover:text-primary-red transition-colors">About Us</a></li>
+                        <li><a href="rd-lab.html" class="hover:text-primary-red transition-colors">Lab Facility</a></li>
+                        <li><a href="certifications.html" class="hover:text-primary-red transition-colors">Certifications</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-red transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Jiangsu Linhai Resin Science And Technology Co., Ltd. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-primary-red transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-red transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 右下角悬浮客服按钮 -->
+    <a href="contact.html" class="fixed bottom-8 right-8 bg-secondary-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:bg-primary-red hover:scale-110 transition-all z-50 cursor-pointer">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+    <!-- 图片放大弹窗 (Lightbox Modal) -->
+    <div id="cert-modal" class="hidden fixed inset-0 z-[100] bg-black bg-opacity-80 flex items-center justify-center p-4">
+        <div class="relative bg-white p-4 max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl">
+            <!-- 关闭按钮 -->
+            <button onclick="closeModal()" class="absolute -top-4 -right-4 bg-primary-red text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-secondary-blue transition-colors shadow-lg z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <!-- 放大后的图片 -->
+            <div class="w-full h-full overflow-hidden flex items-center justify-center bg-gray-50 mb-4 p-4">
+                <img id="modal-img" src="" alt="Certificate" class="max-w-full max-h-[70vh] object-contain">
+            </div>
+            <!-- 图片标题 -->
+            <h3 id="modal-title" class="text-title-md text-black text-center mb-2"></h3>
+        </div>
+    </div>
+
+    <!-- 弹窗交互 JavaScript -->
+    <script>
+        const modal = document.getElementById('cert-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+
+        // 打开弹窗并传入图片路径和标题
+        function openModal(imgSrc, title) {
+            modalImg.src = imgSrc;
+            modalTitle.innerText = title;
+            modal.classList.add('modal-active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // 关闭弹窗
+        function closeModal() {
+            modal.classList.remove('modal-active');
+            document.body.style.overflow = 'auto'; 
+            setTimeout(() => { modalImg.src = ''; }, 300); 
+        }
+
+        // 点击遮罩空白处或按 ESC 关闭
+        modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.classList.contains('modal-active')) closeModal(); });
+    </script>
+</body>
+</html>

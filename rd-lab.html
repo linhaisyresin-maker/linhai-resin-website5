@@ -27,6 +27,34 @@
     </script>
 
     <style>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取导航栏中的搜索输入框和按钮
+        const searchInput = document.querySelector('nav input[type="text"]');
+        const searchBtn = document.querySelector('nav button');
+
+        if (searchInput && searchBtn) {
+            // 定义执行跳转的函数
+            const executeSearch = () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    // 跳转到产品页，并带上查询参数 q
+                    window.location.href = `products.html?q=${encodeURIComponent(query)}`;
+                }
+            };
+
+            // 监听回车键
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    executeSearch();
+                }
+            });
+
+            // 监听搜索图标点击
+            searchBtn.addEventListener('click', executeSearch);
+        }
+    });
+</script>
         body {
             background-color: #FFFFFF;
             color: #000000;
